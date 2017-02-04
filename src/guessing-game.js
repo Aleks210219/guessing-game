@@ -1,9 +1,9 @@
 class GuessingGame {
-    constructor(min, max, mid, number, guess) {
+    game(min, max, mid, number, guess) {
     	this.min = min;
     	this.max = max;
-    	this.mid = mid;
-    	this.number = number;
+    	this.mid = mid = (min + max)/2;
+    	this.number = number = 279;
     	this.guess = guess;
     }
 
