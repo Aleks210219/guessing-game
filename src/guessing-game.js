@@ -1,42 +1,25 @@
 class GuessingGame {
-    game(min, max, mid, number, guess) {
-    	this.min = min;
-    	this.max = max;
-    	this.mid = mid = (min + max)/2;
-    	this.number = number = 279;
-    	this.guess = guess;
-    }
+    constructor() {}
 
     setRange(min, max) {
-    	min = 0;
-    	max = 3445;
-
+    	this.min = min;
+    	this.max = max;
+    	this.midpoint = Math.round((max + min) / 2);
     }
 
     guess() {
-    	
-    	var guess = prompt("Guess a number between 1 and 3445!");
-    	if (guess < number) {
-    		console.log("Too small!");
-    	};
-    	if (guess > number) {
-    		console.log("Too big!");
-    	};
-      if (guess === number) { 
-      	console.log("The number is found. Congratulations!");
-      };
+    	this.midpoint = Math.round((this.max + this.min) / 2);
+    	return this.mid;
     }
 
     lower() {
-    	if (guess < number) {
-           return mid + 1;
-    	}
-   }
-    greater() {
-    	if (guess > number) {
-    		return mid -1;
-    	}
+    	this.max = this.midpoint;
+        this.mid = Math.round((this.max + this.min) / 2);
+    }
 
+    greater() {
+    	this.min = this.midpoint;
+        this.mid = Math.round((this.max + this.min) / 2);
     }
 }
 
